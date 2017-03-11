@@ -1,0 +1,11 @@
+#slideshow
+{
+	width: 520px;
+	height: 370px;
+	overflow: hidden;
+	position: relative;
+}
+#preview
+{
+	position: absolute;
+}
