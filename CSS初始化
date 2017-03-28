@@ -6,7 +6,7 @@ list-style:none;
 }
 a
 {
-text:decorattion:none;
+	text-decoration: none;
 }
 img
 {
@@ -22,6 +22,6 @@ zoom:1;
 display:block;
 clear:both;
 content:'';
-visiility:hidden;
+visibility:hidden;
 height:0px;
 }
