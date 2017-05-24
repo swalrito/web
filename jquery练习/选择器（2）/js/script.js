@@ -1,4 +1,5 @@
-//隐藏第七个及之后开始的品牌，除了最后一个其它商品//
+$(function()
+	{//隐藏第七个及之后开始的品牌，除了最后一个其它商品//
 var $category=$("ul li:gt(7):not(:last)");
 $category.hide();
 
@@ -21,4 +22,6 @@ $btn.click(
 			$(".showMore a span").text("收起全部商品");
 			$("li a").filter(":contains('佳能')").addClass("light");
 	    }
-	})
+	})}
+	)
+
