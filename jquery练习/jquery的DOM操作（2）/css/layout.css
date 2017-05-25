@@ -1,0 +1,29 @@
+li
+{
+	list-style: none;
+	float: left;
+	width: 200px;
+	height: 150px;
+	margin-right: 20px;
+	overflow: hidden;
+}
+#lgImg
+{
+	width: 500px;
+	height: 300px;
+	position: absolute;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+}
+#title
+{
+	width: 500px;
+	height: 30px;
+	position: absolute;
+	bottom: 0px;
+	background-color: #000000;
+	color: #ffffff;
+	margin: 0px;
+	padding: 0px;
+}
