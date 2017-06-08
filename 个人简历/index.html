@@ -11,15 +11,15 @@
 	<div class="nav-photo"></div>
 	<div class="nav-list">
 		<ul>
-			<li><a href="">HOME</a></li>
-			<li><a href="">SKILLS</a></li>
-			<li><a href="">EXPERIENCE</a></li>
-			<li><a href="">PROJECTS</a></li>
+			<li><a href="#home" id="Home">HOME</a></li>
+			<li><a href="#skills" id="Skills">SKILLS</a></li>
+			<li><a href="#experience" id="Experience">EXPERIENCE</a></li>
+			<li><a href="#projects" id="Projects">PROJECTS</a></li>
 		</ul>
 	</div>
 	<div class="nav-arrow left-arrow"></div>
 </div>
-<div class="home scroll J-animate">
+<div class="home scroll J-animate" id="home">
 <div class="content">
 	<h2>Hello World</h2>
 	<div class="home-info clearfloat">
@@ -31,16 +31,18 @@
 		<li><span>github</span> | <a href=" https://github.com/swalrito">点击进入</a></li>
 	</ul>
 	<div class="fr">
-		<p>
+		<p id="intro">
 		我是一个做事认真的人。
 		<br>
 		我喜欢研究工作学习上所碰到的各种技术难点，不给自己设边界，有 Geek 精神。
 		<br>
 		我喜欢探索新技术，一直坚信同一种问题有无数种解法，喜欢用不同的方法解决问题。
 		<br>
-		我是一个克服了拖延症的人，能在规定时间内保证完成任务。</p>
+		我是一个克服了拖延症的人，能在规定时间内保证完成任务。
+		<br>
+		<span>read more</span></p>
 
-		<p>
+		<p id="reson">
 		    <br>
 			为什么选择了前端？
 			<br>
@@ -49,8 +51,10 @@
 			当然自己并不会单单满足于目前的技术栈。
 			<br>
 			我将在工作学习中不停地学习，像海绵一样，在有限的时间里汲取知识。不停地拓展自己。
+			<br>
+			<span>read more</span>
 		</p>
-		<p>
+		<p id="exper">
 		    <br>
 			一年前端开发经验，熟悉 HTML、CSS、Javascript，能熟练开发符合 W3C标准的页面，熟练使用 jQuery ，bootstrap。曾经开发过 jQuery 插件。
 			<br>
@@ -60,35 +64,60 @@
 	</div>
 </div>
 </div>
-<div class="skills J-animate">
+<div class="skills J-animate" id="skills">
 	<div class="content">
 	<h1>技能列表</h1>
 		<ul class="skills-list">
-			<li class="skills-list-item">
+			<li class="skills-list-item hide">
 				<h3>熟练掌握</h3>
 				<hr>
 				<p>html(5)</p>
 				<p>css(3)</p>
 				<p>photoshop</p>
+				<div class="backinfo">
+					<p>
+						能熟练开发符合 W3C标准的页面。
+						开发语义化代码，了解h5的新标签。
+						熟练使用css3的动画特效，并且擅长处理浏览器兼容问题。
+						能够不借助框架开发出响应式布局的网站。
+						在往常的公司中，锻炼了使用PS切图的能力，并且在psd转html中有着1PX的执着。
+					</p>
+				</div>
 			</li>
-			<li class="skills-list-item">
+			<li class="skills-list-item fade">
 				<h3>基本掌握</h3>
 				<hr>
 				<p>javascript</p>
 				<p>jquery</p>
 				<p>bootstrap</p>
+				<div class="backinfo">
+					<p>
+					平时练习demo时，尽量使用原生JS，以提高对JS的理解。
+					在业务开发时运用jquery提高开发效率。
+					熟悉bootstrap框架，能够运用bootstrap开发出响应式布局的网站，并且能够通过重写样式来切合UI图。
+					</p>
+				</div>
 			</li>
-			<li class="skills-list-item">
+			<li class="skills-list-item slide">
 				<h3>开发工具</h3>
 				<hr>
 				<p>Git</p>
 				<p>sublime text 3</p>
 				<p>Chrome</p>
+				<p>less</p>
+				<div class="backinfo">
+				<p>
+					能够使用git来管理项目版本。并且拥有自己的gihub账号，经常在github上fork项目。
+					为了提高编写效率选择ST作为文本编辑器。
+					能够通过Chrome提供的开发者工具调试bug，查看代码，打印测试代码。
+					能够运用less对CSS进行预编译，提高大型项目的开发效率。
+				</p>
+				</div>
 			</li>
 		</ul>
 	</div>
 </div>
-<div class="experience J-animate">
+<div class="experience J-animate" id="experience">
 	<div class="content">
 	<div class="experience-timeline"></div>
 	<h1>工作经历</h1>
@@ -121,38 +150,44 @@
 		</div>
 	</div>
 </div>
-<div class="projects J-animate">
+<div class="projects J-animate" id="projects">
 	<div class="content">
 		<h1>项目经验</h1>
-		<div class="projeccts-list">
-			<div class="projeccts-list-items">
+		<div class="projeccts-info">
+		<ul class="projeccts-list clearfloat">
+			<li class="projeccts-list-items">
 				<div class="photo"><img src=""></div>
 				<p><a href="">闯者网络技术有限公司</a></p>
 				<p>维护并更新官方网站。</p>
-			</div>
-			<div class="projeccts-list-items">
+			</li>
+			<li class="projeccts-list-items">
 				<div class="photo"><img src=""></div>
 				<p><a href="">云购时代电子商务有限公司</a></p>
 				<p>维护并更新官方网站。</p>
-			</div>
-			<div class="projeccts-list-items">
+			</li>
+			<li class="projeccts-list-items">
 				<div class="photo"><img src=""></div>
 				<p><a href="">百度2017ife</a></p>
 				<p>2017IFE前端技术学院春季班题目，报名成功并把三大学院的题目写了一遍，温习基础。
 				<br>
 				题目包括了html、css、js，以及各类综合项目。
 				</p>
-			</div>
-			<div class="projeccts-list-items">
+			</li>
+			<li class="projeccts-list-items">
 				<div class="photo"><img src=""></div>
 				<p><a href="">鼠标悬浮效果</a></p>
-				<p>重点运用了css3的特性实现渐变背景以及滤镜模糊效果，同时用js动画，实现走马灯效果。</p>
-			</div>
-			<div class="projeccts-list-items">
+				<p>重点运用了css3的特性实现渐变背景以及滤镜模糊效果，实现走马灯效果。</p>
+			</li>
+			<li class="projeccts-list-items">
 				<div class="photo"><img src=""></div>
 				<p><a href="">租房预览</a></p>
 				<p>算是js的综合运用，通过点击住房平面图的特定部位，可以获取以该位置视角的住房照片，方便租客查看房子效果。</p>
-			</div>
+			</li>
+		</ul>
+		<div class="btn">
+			<div class="btn-left"></div>
+			<div class="btn-right"></div>
+		</div>
 		</div>
 	</div>
 </div>

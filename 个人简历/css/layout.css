@@ -148,6 +148,7 @@ body
 	display: inline-block;
 	width: 50px;
 	text-align: center;
+
 }
 
 
@@ -162,6 +163,16 @@ body
 	color: #ffffff;
 	font-family: "Microsoft YaHei";
 	line-height: 180%;
+}
+.home .content .home-info .fr #reson,.home .content .home-info .fr #exper
+{
+	display: none;
+}
+.home .content .home-info .fr p span
+{
+	text-decoration: underline;
+	cursor: pointer;
+	lighting-color: #FFED00;
 }
 
 
@@ -180,19 +191,26 @@ body
 	display: flex;
 	position: relative;
 	justify-content: space-between;
-	width: 600px;
+	width: 800px;
 	left: 50%;
-	margin-left: -300PX;
+	margin-left: -400PX;
 }
 .skills .skills-list .skills-list-item
 {
-	width: 150px;
-	height: 300px;
+	position: relative;	
+	width: 250px;
+	height: 400px;
 	border: 2px solid #F6B5B5;
+	overflow: hidden;
 	box-shadow: 2px 2px;
+	transition: all 2s;
+	-webkit-transition: all 2s;
+	-o-transition: all 2s;
+	-ms-transition: all 2s;
 }
 .skills .skills-list .skills-list-item h3
 {
+
 	height: 30px;
 	color: #ffffff;
 	text-align: center;
@@ -210,6 +228,13 @@ body
 	line-height: 200%;
 	text-align: center;
 	font-weight: bold;
+}
+.skills .skills-list .skills-list-item .backinfo
+{
+	position: absolute;
+	display: none;
+	margin: 10px;
+	top: 0px;
 }
 
 
@@ -321,20 +346,24 @@ body
 	background-color: #02643F;
 	z-index: 1;
 }
-.projects .projeccts-list
+.projects .projeccts-info
 {
 
-	width: 730px;
+	width: 660px;
 	margin: 0px auto;
+	overflow: hidden;
 }
-.projects .projeccts-list .projeccts-list-items
+.projects .projeccts-info ul
 {
-	display: inline-block;
-	width: 220px;
-	margin: 10px;
-	vertical-align: top;
+	width: 1100px;
+	position: relative;
 }
-.projects .projeccts-list .projeccts-list-items .photo
+.projects .projeccts-info .projeccts-list-items
+{	
+	width: 220px;
+	float: left;
+}
+.projects .projeccts-info .projeccts-list-items .photo
 {
 	width: 80px;
 	height: 80px;
@@ -342,23 +371,42 @@ body
 	border-radius: 80px 80px 80px 80px;
 	margin: 0px auto;
 }
-.projects .projeccts-list .projeccts-list-items p:nth-child(2)
+.projects .projeccts-info .projeccts-list-items p:nth-child(2)
 {
 		text-align: center;
 }
-.projects .projeccts-list .projeccts-list-items p
+.projects .projeccts-info .projeccts-list-items p
 {
 	font-family: "Microsoft YaHei";
 	line-height: 180%;
 	margin: 20px 0px 20px 0px;
 }
-.projects .projeccts-list .projeccts-list-items p a
+.projects .projeccts-info .projeccts-list-items p a
 {
 	color: #ffffff;
 	font-family: "Microsoft YaHei";
 	font-size: 16px;
 }
-.projects .projeccts-list .projeccts-list-items p a:hover
+.projects .projeccts-info .projeccts-list-items p a:hover
 {
 	text-decoration: underline;
+}
+.projects .projeccts-info .btn
+{
+	float: right;
+}
+.projects .projeccts-info .btn .btn-left
+{
+	display: inline-block;
+	border: 10px solid transparent;
+	border-right:  20px solid #F8A7A7;
+	cursor: pointer;
+}
+.projects .projeccts-info .btn .btn-right
+{
+	display: inline-block;
+	margin-left: 10px;
+	border: 10px solid transparent;
+	border-left:  20px solid #F8A7A7;
+	cursor: pointer;
 }
