@@ -21,6 +21,8 @@ body
 	border: 1px solid #000000;
 	border-radius: 50px 50px;
 	box-shadow: 2px 2px;
+	overflow: hidden;
+	background-image: url(..//images/QQ图片20170608222447.jpg);
 }
 .nav .nav-list
 {
