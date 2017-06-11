@@ -5,13 +5,12 @@
 }
 .gallery
 {
-	width: 5120px;
+	width: 7168px;
 	height: 500px;
 	margin: 0px;
 	padding: 0px;
 	position: absolute;
-	left: 0px;
-	transition: left 1.5S;
+	left: -1024px;
 }
 .banner
 {
@@ -53,7 +52,7 @@ li
 
 
 }
-.btn-item a
+.btn-item-a
 {
 	display: block;
 	width: 15px;
@@ -76,7 +75,7 @@ li
 	opacity: 0;
 	background-color: #ffffff;
 }
-#a
+.red
 {
 	background-color: #ff0000;
 }

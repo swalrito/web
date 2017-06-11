@@ -1,294 +1,195 @@
-var id=setInterval(autoMove, 5000);
+//克隆第一张图与最后一张图//
+$(function() {
+	var $firstImg=$(".gallery").find("li").first().clone();
+	var $lastImg=$(".gallery").find("li").last().clone();
+	$(".gallery").prepend($lastImg);
+	$(".gallery").append($firstImg);
+})
 
-function aMove()
+
+//显示箭头//
+$(function()
 {
-	var gallery=document.getElementsByClassName('gallery')[0];
-
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
-
-	a.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ffffff';
-	a.style.backgroundColor = '#ff0000';
-	gallery.style.left = '0px';
-
-	
-}
-
-function bMove()
-{
-	var gallery=document.getElementsByClassName('gallery')[0];
-
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
-
-	a.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ff0000';
-	gallery.style.left = '-1024px';
-
-	
-}
-
-function cMove()
-{
-	var gallery=document.getElementsByClassName('gallery')[0];
-
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
-
-	a.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ff0000';
-	gallery.style.left = '-2048px';
-
-	
-}
-
-function dMove()
-{
-	var gallery=document.getElementsByClassName('gallery')[0];
-
-
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
-
-	a.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ff0000';
-	gallery.style.left = '-3072px';
-
-	
-}
-
-function eMove()
-{
-	var gallery=document.getElementsByClassName('gallery')[0];
-
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
-
-	a.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ff0000';
-	gallery.style.left = '-4096px';
-
-	
-}
-
-function showArrow()
-{
-	var left=document.getElementById('left');
-	var right=document.getElementById('right');
-
-	left.style.opacity='0.3';
-	right.style.opacity='0.3';
-
-	clearInterval(id);
-}
-
-function notShowArrow()
-{
-	var left=document.getElementById('left');
-	var right=document.getElementById('right');
-
-	left.style.opacity='0';
-	right.style.opacity='0';
-}
-
-function leftMove()
-{
-	var gallery=document.getElementsByClassName('gallery')[0];
-	var xpos=gallery.style.left;
-	var x=parseInt(xpos);
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
-
-	a.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ffffff';
-	if(xpos!="0px")
+	$(".banner").hover(function()
 	{
-
-		gallery.style.left=x+1024+'px';
-	}
-	showBtnRed();	    
-}
-
-function rightMove()
-{
-	var gallery=document.getElementsByClassName('gallery')[0];
-	var xpos=gallery.style.left;
-	var x=parseInt(xpos);
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
-
-	a.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ffffff';
-	if(xpos!="-4096px")
+		$(".leftArrow a").css({opacity:"0.4"});
+		$(".rightArrow a").css({opacity:"0.4"});
+	},function()
 	{
-		if(xpos=='')
-		{
-			x=0;
-		}
-		gallery.style.left=x-1024+'px';
-	}
-	showBtnRed();	
-}
+		$(".leftArrow a").css({opacity:"0"});
+		$(".rightArrow a").css({opacity:"0"});
+	})
+})
 
-function showBtnRed()
-{
-	var gallery=document.getElementsByClassName('gallery')[0];
-	var xpos=gallery.style.left;
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
 
-	a.style.backgroundColor = '#ffffff';
-	b.style.backgroundColor = '#ffffff';
-	c.style.backgroundColor = '#ffffff';
-	d.style.backgroundColor = '#ffffff';
-	e.style.backgroundColor = '#ffffff';
-	if(xpos==' '||xpos=="0px")
-	{
-		a.style.backgroundColor = '#ff0000';
-		
-	}
-	else
-    {
-		if(xpos=='-1024px')
-		{
-			b.style.backgroundColor = '#ff0000';
-			
-		}
-		else 
-		{
-			if(xpos=='-2048px')
-			{
-				c.style.backgroundColor = '#ff0000';
-				
-			}
-			else
-			{
-				if(xpos=='-3072px')
-				{
-					d.style.backgroundColor = '#ff0000';
-					
-				}
-				else 
-				{
-					if(xpos=='-4096px')
-					{
-						e.style.backgroundColor = '#ff0000';
-						
-					}
-				}
-			}
-		}
-	}
-
-}
+//自动播放//
 function autoMove()
 {
-	var gallery=document.getElementsByClassName('gallery')[0];
-	var xpos=gallery.style.left;
-	var x=parseInt(xpos);
-	if(xpos!='-4096px')
-	{
-		if(xpos=='')
+	var gallery=document.getElementsByClassName("gallery")[0];
+	var index=1;
+	var id=setInterval(function(){
+
+		var left=parseInt(gallery.style.left);
+		if(left<-5120)
 		{
-			x=0;
+			gallery.style.left="-1024px";
 		}
-		gallery.style.left=x-1024+'px';
-	}
-	else
+
+		$(".gallery").animate({left:"-="+1024+"px"},500);
+		index++;
+		if(index>5)
+		{
+			index=1;
+		}
+		showBtn(index);
+
+	}, 2000)
+	$(".banner").hover(function(){
+		clearTimeout(id);
+	},function(){
+		id=setInterval(function()
+			{
+				var left=parseInt(gallery.style.left);
+				if(left<-5120)
+				{
+				gallery.style.left="-1024px";
+				}
+				
+				$(".gallery").animate({left:"-="+1024+"px"},500);
+				index++;
+				if(index>5)
+				{
+					index=1;
+				}
+				showBtn(index);
+			},2000);
+	})
+}
+autoMove();
+
+//btn背景色切换
+function showBtn(index){
+	var btn=document.getElementsByClassName("btn-item-a");
+	for(var i=0;i<btn.length;i++)
 	{
-		gallery.style.left = '0px';
-	
+		if(btn[i].className=="btn-item-a red")
+		{
+			btn[i].className="btn-item-a";
+			break;
+		}
 	}
-	showBtnRed();
+	btn[index-1].className="btn-item-a red";
 }
 
 
-function btnActive()
+//点击箭头切换图片
+function arrowChange()
 {
-	var a=document.getElementById('a');
-	var b=document.getElementById('b');
-	var c=document.getElementById('c');
-	var d=document.getElementById('d');
-	var e=document.getElementById('e');
+	var gallery=document.getElementsByClassName("gallery")[0];
+	var leftBtn=document.getElementById("left");
+	var rightBtn=document.getElementById("right");
+	var index=1;
+	gallery.style.left="-1024px";
+	function animate(offset)
+	{
+		var newLeft=parseInt(gallery.style.left)+offset;
+		var time=300;
+		var interval=10;
+		var speed=offset/(time/interval);
 
-	var left =document.getElementById('left');
-	var right=document.getElementById('right');
+		function go(){
+			if(speed<0&&parseInt(gallery.style.left)>newLeft||speed>0&&parseInt(gallery.style.left)<newLeft)
+			{
+				gallery.style.left=parseInt(gallery.style.left)+speed+"px";
+				setTimeout(go,interval);
+			}
+			else {
+				gallery.style.left=newLeft+"px";
+				if(newLeft>-1024)
+				{
+				gallery.style.left="-5120px";
+				}
+				if(newLeft<-5120)
+				{
+				gallery.style.left="-1024px";
+				}
+				}
+		}
+		go();
+		
+	}
 
-	var gallery=document.getElementsByClassName('gallery')[0];
-	var left=document.getElementById('left');
-	var right=document.getElementById('right');
-	var btn=document.getElementsByClassName('btn')[0];
+	leftBtn.onclick=function(){
+		animate(1024);
+		index--;
+		if(index<1)
+		{
+			index=5;
 
-	var btn=document.getElementsByClassName('btn')[0];
+		}
+		showBtn(index);
+	}
+	rightBtn.onclick=function(){
+		animate(-1024);
+		index++;
+		if(index>5)
+		{
+			index=1;
 
-	
-
-	a.onclick=aMove;
-	b.onclick=bMove;
-	c.onclick=cMove;
-	d.onclick=dMove;
-	e.onclick=eMove;
-
-	gallery.onmouseover=showArrow;
-	left.onmouseover=showArrow;
-	right.onmouseover=showArrow;
-
-	gallery.onmouseout=function(){notShowArrow();id=setInterval(autoMove, 5000);} 
-	left.onmouseout=function(){notShowArrow();id=setInterval(autoMove, 5000);} 
-	right.onmouseout=function(){notShowArrow();id=setInterval(autoMove, 5000);} 
-
-
-	left.onclick=leftMove;
-	right.onclick=rightMove;
+		}
+		showBtn(index);
+	}
 }
-btnActive();
+arrowChange();
+
+
+//点击a标签切换图片//
+$(function()
+{
+	
+	$(".btn-item-a").click(function()
+	{
+		//给点击的a标签换色//
+		$(".btn-item-a").removeClass("red");
+		$(this).addClass("red");		
+	});
+		//点击相应的a标签切换图片//
+	$(".btn-item-a:eq(0)").click(function()
+	{
+		if(!$(".gallery").is(":animated"))
+		{
+			$(".gallery").animate({left:"-1024px"},"quick");
+		}
+	});
+	$(".btn-item-a:eq(1)").click(function()
+	{
+		if(!$(".gallery").is(":animated"))
+		{
+			$(".gallery").animate({left:"-2048px"},"quick");
+		}
+	});
+	$(".btn-item-a:eq(2)").click(function()
+	{
+		if(!$(".gallery").is(":animated"))
+		{
+			$(".gallery").animate({left:"-3072px"},"quick");
+		}
+	});
+	$(".btn-item-a:eq(3)").click(function()
+	{
+		if(!$(".gallery").is(":animated"))
+		{
+			$(".gallery").animate({left:"-4096px"},"quick");
+		}		
+	});
+	$(".btn-item-a:eq(4)").click(function()
+	{
+		if(!$(".gallery").is(":animated"))
+		{
+			$(".gallery").animate({left:"-5120px"},"quick");
+		}
+	});
+
+
+
+})
