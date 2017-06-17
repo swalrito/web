@@ -151,7 +151,15 @@ function smMove(lg_index){
 $(function(){
 	$(".rightImg-sm img").click(function(){
 		var $num=$(this).attr("title");
+		var $lgImg=parseInt($(".leftImg-imgItems li").css("width"));
+
 		$(".rightImg-lg img").removeClass("J-display");
 		$(".rightImg-lg img:eq("+$num+")").addClass("J-display");
+		if(!$(".leftImg-imgItems ul").is(":animated"))
+		{
+			$(".leftImg-imgItems ul").animate({left:-2*$num*$lgImg+"px"},"normal");
+			smMove(2*$num+1);
+			showBorder(2*$num+1);
+		}
 	})
 })
