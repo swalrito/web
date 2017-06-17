@@ -61,6 +61,7 @@ $(function(){
 		$lg_index++;
 		showBorder($lg_index+1);
 		smMove($lg_index+1);
+		changePlan($lg_index);
 	}
 		}
 		
@@ -80,6 +81,7 @@ $(function(){
 		$lg_index--;
 		showBorder($lg_index+1);
 		smMove($lg_index+1);
+		changePlan($lg_index);
 	}
 		}
 		
@@ -153,8 +155,11 @@ $(function(){
 		var $num=$(this).attr("title");
 		var $lgImg=parseInt($(".leftImg-imgItems li").css("width"));
 
-		$(".rightImg-lg img").removeClass("J-display");
-		$(".rightImg-lg img:eq("+$num+")").addClass("J-display");
+		$(".rightImg-lg-items").removeClass("J-display");
+		$(".rightImg-lg-items:eq("+$num+")").addClass("J-display");
+
+		$(".rightImg-sm img").removeClass("J-border");
+		$(this).addClass("J-border");
 		if(!$(".leftImg-imgItems ul").is(":animated"))
 		{
 			$(".leftImg-imgItems ul").animate({left:-2*$num*$lgImg+"px"},"normal");
@@ -163,3 +168,39 @@ $(function(){
 		}
 	})
 })
+
+//大图显示的同时，平面图中的摄像头切换，平面图切换//
+function changeCamera(){
+
+}
+
+//大图切换到一定程度，平面图也切换//
+function changePlan(index){
+	console.log(index);
+	switch (index) {
+		case 0:
+		$(".rightImg-sm img:eq(0)").click();
+		break;
+		case 1:
+		$(".rightImg-sm img:eq(0)").click();
+		break;
+		case 2:
+		$(".rightImg-sm img:eq(1)").click();
+		break;
+		case 3:
+		$(".rightImg-sm img:eq(1)").click();
+		break;
+		case 4:
+		$(".rightImg-sm img:eq(2)").click();
+		break;
+		case 5:
+		$(".rightImg-sm img:eq(2)").click();
+		break;
+		case 6:
+		$(".rightImg-sm img:eq(3)").click();
+		break;
+		case 7:
+		$(".rightImg-sm img:eq(3)").click();
+		break;
+	}
+}
