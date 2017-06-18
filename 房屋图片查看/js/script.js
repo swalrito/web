@@ -62,6 +62,7 @@ $(function(){
 		showBorder($lg_index+1);
 		smMove($lg_index+1);
 		changePlan($lg_index);
+		changeCamera($lg_index);
 	}
 		}
 		
@@ -82,6 +83,7 @@ $(function(){
 		showBorder($lg_index+1);
 		smMove($lg_index+1);
 		changePlan($lg_index);
+		changeCamera($lg_index);
 	}
 		}
 		
@@ -96,7 +98,7 @@ function showBorder(index)
 	$(".bottomImg-imgItems li:eq("+i+")").addClass("J-border");
 }
 
-//点击小图切换大图//
+//点击小图切换大图与平面图//
 $(function(){
 	$(".bottomImg-imgItems li").click(function(event)
 	{
@@ -106,7 +108,9 @@ $(function(){
 		
 		{
 			$(".leftImg-imgItems ul").animate({left:moveLength+"px"},"normal");
+			changePlan($tg_index-1);
 			showBorder($tg_index);
+			changeCamera($tg_index-1);
 	    }
 	})
 })
@@ -160,6 +164,9 @@ $(function(){
 
 		$(".rightImg-sm img").removeClass("J-border");
 		$(this).addClass("J-border");
+
+		$(".rightImg-lg-items-camera").attr("src","images/camera113.png");
+		$(".rightImg-lg-items:eq("+$num+") .rightImg-lg-items-camera:eq(0)").attr("src","images/camera-red.png");
 		if(!$(".leftImg-imgItems ul").is(":animated"))
 		{
 			$(".leftImg-imgItems ul").animate({left:-2*$num*$lgImg+"px"},"normal");
@@ -169,14 +176,9 @@ $(function(){
 	})
 })
 
-//大图显示的同时，平面图中的摄像头切换，平面图切换//
-function changeCamera(){
-
-}
 
 //大图切换到一定程度，平面图也切换//
 function changePlan(index){
-	console.log(index);
 	switch (index) {
 		case 0:
 		$(".rightImg-sm img:eq(0)").click();
@@ -203,4 +205,22 @@ function changePlan(index){
 		$(".rightImg-sm img:eq(3)").click();
 		break;
 	}
+}
+
+//点击摄像头图片切换大图//
+$(function(){
+	$(".rightImg-lg-items-camera").click(function(){
+		var $title=parseInt($(this).attr("title"));
+		$(".leftImg-imgItems ul").animate({left:$title*(-800)+"px"},"normal");
+		$(".rightImg-lg-items-camera").attr("src","images/camera113.png");
+		$(this).attr("src","images/camera-red.png");
+
+		showBorder($title+1);
+	})
+})
+
+//大图切换到一定位置，摄像头图标相应切换//
+function changeCamera(index){
+	$(".rightImg-lg-items-camera").attr("src","images/camera113.png");
+	$(".rightImg-lg-items-camera:eq("+index+")").attr("src","images/camera-red.png");
 }
