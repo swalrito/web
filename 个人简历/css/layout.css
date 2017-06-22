@@ -407,11 +407,11 @@ body
 {
 	width: 80px;
 	height: 80px;
-	border: 1px solid #000000;
 	-webkit-border-radius: 80px 80px 80px 80px;
 	-moz-border-radius: 80px 80px 80px 80px;
 	-ms-border-radius: 80px 80px 80px 80px;
 	border-radius: 80px 80px 80px 80px;
+	overflow: hidden;
 	margin: 0px auto;
 }
 .projects .projeccts-info .projeccts-list-items p:nth-child(2)
