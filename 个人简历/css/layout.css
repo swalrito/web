@@ -19,7 +19,13 @@ body
 	height: 100px;
 	width: 100px;
 	border: 1px solid #000000;
+	-moz-border-radius: 50px 50px;
+	-webkit-border-radius: 50px 50px;
+	-ms-border-radius: 50px 50px;
 	border-radius: 50px 50px;
+	-webkit-box-shadow: 2px 2px;
+	-moz-box-shadow: 2px 2px;
+	-ms-box-shadow: 2px 2px;
 	box-shadow: 2px 2px;
 	overflow: hidden;
 	background-image: url(..//images/QQ图片20170608222447.jpg);
@@ -62,6 +68,9 @@ body
 	margin-top: -25px;
 	background-color: #565656;
 	opacity: 0.6;
+	-webkit-border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	-ms-border-radius: 0px 5px 5px 0px;
 	border-radius: 0px 5px 5px 0px;
 	cursor: pointer;
 }
@@ -87,7 +96,7 @@ body
 
 .content
 {
-	margin-top: 200px;
+	margin-top: 150px;
 	position: relative;
 	width: 1000px;
 	left: 50%;
@@ -111,6 +120,17 @@ body
 	background-color: #02643F;
 	z-index: 4;
 
+}
+.home .downArrow a
+{
+	display: block;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -16px;
+    height: 18px;
+    width: 32px;
+	background-image: url(..//images/down.png);
 }
 .home .content h2
 {
@@ -254,9 +274,9 @@ body
 	position: absolute;
 	content: '';
 	height: 100%;
-	border: 4px solid #02CEFF;
+	border: 2px solid #707070;
 	left: 50%;
-	margin-left: -2px;
+	margin-left: -1px;
 	margin-top: 60px;
 }
 .experience .experience-items
@@ -267,20 +287,23 @@ body
 .experience .experience-items .items-node
 {
 	position: absolute;
-	width: 50px;
-	height: 50px;
-	border-radius: 50px;
-	background-color: #0043FF;
+	width: 20px;
+	height: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	border-radius: 20px;
+	background-color: #4F4F4F;
 	left: 50%;
 	top: 50%;
-	margin-left: -25px;
-	margin-top: -25px;
+	margin-left: -10px;
+	margin-top: -10px;
 }
 .experience .experience-items .items
 {
 	width: 400px;
 	padding: 10px;
-	background-color: #F8A7A7;
+	background-color: #D8C967;
 }
 .experience .experience-items .items h4
 {
@@ -300,9 +323,10 @@ body
 {
 	position: absolute;
 	top: 50%;
-	margin-left: 550px;
-	font-family: "SimSun";
-	font-size: 14px;
+	margin-left: 524px;
+	font-family: "Microsoft YaHei";
+	font-size: 20px;
+	color: #ffffff;
 }
 .experience .experience-items .items-left::after
 {
@@ -312,7 +336,7 @@ body
 	margin-top: -16px;
 	content: '';
 	border: 16px solid transparent;
-	border-left:  40px solid #F8A7A7;
+	border-left:  40px solid #D8C967;
 }
 .experience .experience-items .items-right
 {
@@ -322,9 +346,10 @@ body
 {
 	position: absolute;
 	top: 50%;
-	margin-left:-270px;
-	font-family: "SimSun";
-	font-size: 14px;
+	margin-left:-350px;
+	font-family: "Microsoft YaHei";
+	font-size: 20px;
+	color: #ffffff;
 }
 .experience .experience-items .items-right::before
 {
@@ -334,7 +359,7 @@ body
 	margin-top: -16px;
 	content: '';
 	border: 16px solid transparent;
-	border-right:  40px solid #F8A7A7;
+	border-right:  40px solid #D8C967;
 }
 
 
@@ -348,10 +373,22 @@ body
 	background-color: #02643F;
 	z-index: 1;
 }
+.projects .upArrow a
+{
+	display: block;
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -16px;
+    height: 18px;
+    width: 32px;
+	background-image: url(..//images/up.png);
+
+}
 .projects .projeccts-info
 {
 
-	width: 660px;
+	width: 690px;
 	margin: 0px auto;
 	overflow: hidden;
 }
@@ -363,6 +400,7 @@ body
 .projects .projeccts-info .projeccts-list-items
 {	
 	width: 220px;
+	margin-left: 10px;
 	float: left;
 }
 .projects .projeccts-info .projeccts-list-items .photo
@@ -370,6 +408,9 @@ body
 	width: 80px;
 	height: 80px;
 	border: 1px solid #000000;
+	-webkit-border-radius: 80px 80px 80px 80px;
+	-moz-border-radius: 80px 80px 80px 80px;
+	-ms-border-radius: 80px 80px 80px 80px;
 	border-radius: 80px 80px 80px 80px;
 	margin: 0px auto;
 }
@@ -401,7 +442,11 @@ body
 {
 	display: inline-block;
 	border: 10px solid transparent;
-	border-right:  20px solid #F8A7A7;
+	border-right:  20px solid #60BCEA;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
 	cursor: pointer;
 }
 .projects .projeccts-info .btn .btn-right
@@ -409,6 +454,10 @@ body
 	display: inline-block;
 	margin-left: 10px;
 	border: 10px solid transparent;
-	border-left:  20px solid #F8A7A7;
+	border-left:  20px solid #60BCEA;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	border-radius: 5px;
 	cursor: pointer;
 }

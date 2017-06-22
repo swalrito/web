@@ -29,11 +29,14 @@ function clickScrool()
 			//.scroll不是自身//
 			if($length!=5)
 			{
-				$("div.scroll").animate({height:"100%"},1000);
-				$("#home").nextUntil("div.scroll").animate({height:"100%"},1000);
-				$("div.scroll").removeClass("scroll");
-				$("#home").animate({height:"100%"},1000);
-				$("#home").addClass("scroll");
+				if(!$(".content").is("animated"))
+				{
+					$("div.scroll").animate({height:"100%"},1000);
+					$("#home").nextUntil("div.scroll").animate({height:"100%"},1000);
+					$("div.scroll").removeClass("scroll");
+					$("#home").animate({height:"100%"},1000);
+					$("#home").addClass("scroll");
+			}
 			}
 		});
 	$('#Skills').click(function()
@@ -42,36 +45,50 @@ function clickScrool()
 			//.scroll页面在siklls页面之后//
 			if($length!=4)
 			{
-				$("div.scroll").animate({height:"100%"},1000);
-				$("#skills").nextUntil("div.scroll").animate({height:"100%"},1000);
-				$("div.scroll").removeClass("scroll");
-				$("#skills").animate({height:"100%"},1000);
-				$("#skills").addClass("scroll");
+				if(!$(".content").is("animated"))
+				
+				{
+					$("div.scroll").animate({height:"100%"},1000);
+					$("#skills").nextUntil("div.scroll").animate({height:"100%"},1000);
+					$("div.scroll").removeClass("scroll");
+					$("#skills").animate({height:"100%"},1000);
+					$("#skills").addClass("scroll");
+			}
 			}
 			else {
-				$("#skills").prev("div.scroll").animate({height:"0px"},1000);
-				$("#skills").prev("div.scroll").removeClass("scroll");
-				$("#skills").addClass("scroll");
+				if(!$(".content").is("animated"))
+				{
+					$("#skills").prev("div.scroll").animate({height:"0px"},1000);
+					$("#skills").prev("div.scroll").removeClass("scroll");
+					$("#skills").addClass("scroll");
+			}
 			}
 		});
 	$('#Experience').click(function()
 		{
 			$length=$("#experience").nextUntil("div.scroll").length;
+			console.log($length);
 			//.scroll页面在experience页面之后//
 			if($length!=3)
 			{
+				if(!$(".content").is("animated"))
+				{
 				$("div.scroll").animate({height:"0px"},1000);
 				$("#experience").nextUntil("div.scroll").animate({height:"100%"},1000);
 				$("div.scroll").removeClass("scroll");
 				$("#experience").animate({height:"100%"},1000);
 				$("#experience").addClass("scroll");
+				}
 			}
 			else {
-				$("div.scroll").animate({height:"0px"},1000);
-				$("#experience").prevUntil(".scroll").not(".nav").animate({height:"0px"},1000);
-				$("div.scroll").removeClass("scroll");
-				$("#experience").addClass("scroll");
-			    
+				    if(!$(".content").is("animated"))
+					{
+						$("div.scroll").not("#experience").animate({height:"0px"},1000);
+						$("#experience").prevUntil(".scroll").not(".nav").animate({height:"0px"},1000);
+						$("div.scroll").removeClass("scroll");
+						$("#experience").addClass("scroll");
+				}
+			
 			}
 		});
 	$('#Projects').click(function()
@@ -79,11 +96,14 @@ function clickScrool()
 			$length=$("#projects").nextUntil("div.scroll").length;
 			if($length==2)
 			{
-				$("div.scroll").animate({height:"0px"},1000);
-				$("#projects").prevUntil(".scroll").not(".nav").animate({height:"0px"},1000);
-				$("div.scroll").removeClass("scroll");
-				$("#projects").animate({height:"100%"},1000);
-				$("#projects").addClass("scroll");
+				if(!$(".content").is("animated"))
+				{
+					$("div.scroll").not("#projects").animate({height:"0px"},1000);
+					$("#projects").prevUntil(".scroll").not(".nav").animate({height:"0px"},1000);
+					$("div.scroll").removeClass("scroll");
+					$("#projects").animate({height:"100%"},1000);
+					$("#projects").addClass("scroll");
+					}
 			}
 			
 		});
@@ -212,22 +232,11 @@ $(function(){
 $(function()
 {
 	setInterval(function(){
-		$('.items-node').delay(500).animate({width:"60px",height:"60px",marginLeft:"-30px",marginTop:"-30px"},500);
-		$('.items-node').delay(500).animate({width:"50px",height:"50px",marginLeft:"-25px",marginTop:"-25px"},500);
-	}, 1000)
+		$('.items-node').animate({width:"30px",height:"30px",marginLeft:"-15px",marginTop:"-15px"},800);
+		$('.items-node').animate({width:"20px",height:"20px",marginLeft:"-10px",marginTop:"-10px"},800);
+	}, 1600)
 })
 
-//工作经历信息特效，循环左右摇摆//
-$(function()
-{
-	setInterval(function()
-		{
-			$(".items-left").delay(500).animate({marginLeft:"10px"},500);
-			$(".items-right").delay(500).animate({marginRight:"10px"},500);
-			$(".items-left").delay(500).animate({marginLeft:"0px"},500);
-			$(".items-right").delay(500).animate({marginRight:"0px"},500);
-		}, 1000)
-})
 
 //幻灯片播放
 $(function()
@@ -237,6 +246,7 @@ $(function()
 	var len=$(".projeccts-list-items").length;
 	var page_count=Math.ceil(len/i)
 	var $width=$('.projeccts-info').width();
+	var $lastWidth=-(page_count-1)*parseInt($width);
 	//点击按钮切换//
 	$(".btn-right").click(function()
 	{
@@ -263,6 +273,11 @@ $(function()
 			{
 				$(".projeccts-list").animate({left:"+="+$width},"normal");
 				page--;
+			}
+			else
+			{
+				$(".projeccts-list").animate({left:$lastWidth+"px"},"normal");
+				page=page_count;
 			}
 		}
 		
@@ -329,5 +344,26 @@ $(function()
 		},2000);
 	});
 })
+
+//首页尾页箭头动画效果//
+$(function(){
+	var id=setInterval(function(){
+		$(".arrow a").animate({bottom:"+="+"20px"},500);
+		$(".arrow a").animate({bottom:"-="+"20px"},500);
+	},1000)
+})
+
+//点击箭头切换页面//
+$(function(){
+	$(".downArrow").click(function(){
+		$(".home").animate({height:"0px"},1500);
+		$(".home").removeClass("scroll");
+		$(".skills").addClass("scroll");
+	});
+	$(".upArrow").click(function(){
+		$(".experience").animate({height:"100%"},1500).addClass("scroll");
+		$(".projects").removeClass("scroll");
+	})
+})
 scroll();
-clickScrool()
+clickScrool();
